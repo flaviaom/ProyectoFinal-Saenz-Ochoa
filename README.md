@@ -23,7 +23,9 @@ usuario: flavialuis
 contraseña: python1234
 
 ## Modelos
-Esta página tiene 5 modelos creados
+Esta página tiene 6 modelos creados
++ Usuario: username, Nombre, Apellido, Email, Contraseña, Avatar 
+
 + Paciente: Nombre, Fecha de nacimiento, Dirección, Teléfono e Imagen
 + Doctor: Nombre, Especialidad, Teléfono, correo
 + Servicio: Nombre, Descripcion, Costo
@@ -32,6 +34,7 @@ Esta página tiene 5 modelos creados
 
 ## Formularios
 ### Para insertar datos
++ Crear Usuario
 + Crear Paciente
 + Crear Doctor
 + Crear Servicio
