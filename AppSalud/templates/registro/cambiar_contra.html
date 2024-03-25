@@ -1,0 +1,27 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+  <!-- Silenciar Sección: Portafolio -->
+  {% block portafolio %}
+  {% endblock %}
+
+    <!-- Silenciar Sección: Header -->
+    {% block mastheader %}
+    {% endblock %}
+  
+   <!-- Sección: Título -->
+  {% block titulo %}
+  CAMBIA TU CONTRASEÑA
+  {% endblock %}
+
+{% block parrafo %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+{{form}}
+
+<button type="submit"> Cambiar Contraseña </button>
+
+</form>
+
+{% endblock %}

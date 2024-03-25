@@ -1,0 +1,33 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+ {% block mastheader %}
+ {% endblock %}
+ 
+  <!-- Silenciar Sección: Portafolio -->
+ {% block portafolio %}
+ {% endblock %}
+
+ <!-- Sección: Título -->
+{% block titulo %}
+CREAR UN SERVICIO
+{% endblock %}
+
+ <!-- Subsección: Subtítulo -->
+{% block subtitulo %}
+Ingresa los datos del servicio para crearlo
+{% endblock %}
+
+ <!-- Sección: Párrafo -->
+{% block parrafo %}
+
+<form action="/AppSalud/crear_servicio/" method="post" enctype="multipart/form-data"> {% csrf_token %}
+
+{{formu.as_p}}
+
+<input type="submit" value="Crear">
+
+</form>
+
+{% endblock %}

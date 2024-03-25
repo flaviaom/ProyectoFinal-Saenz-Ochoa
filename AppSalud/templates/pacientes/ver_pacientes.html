@@ -1,0 +1,56 @@
+ <!-- Herencia HTML -->
+{% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+{% block mastheader %}
+{% endblock %}
+
+ <!-- Silenciar Sección: Portafolio -->
+{% block portafolio %}
+{% endblock %}
+
+ <!-- Sección: Título -->
+{% block titulo %}
+NUESTROS PACIENTES
+{% endblock %}
+
+ <!-- Subsección: Subtitulo -->
+{% block subtitulo %}
+Para modificar/ eliminar un paciente existente inicia sesión.
+{% endblock %}
+
+ <!-- Sección: Párrafo -->
+
+{% block parrafo %}
+
+<div class="text-center">
+    <table class="table table-bordered mx-auto">
+        <thead class="thead-dark">
+            <tr>
+                <th>Paciente</th>
+                <th>Fecha de nacimiento</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for valor in total %}
+            <tr>
+                <td>{{ valor.nombre }}</td>
+                <td>{{ valor.fecha_nacimiento }}</td>
+                <td>{{ valor.direccion }}</td>
+                <td>{{ valor.telefono }}</td>
+                {% if user.is_authenticated %}
+                <td> <a href="{% url 'Editar Paciente' valor.id %}">Actualizar</a> </td>
+                <td> <a href="{% url 'Eliminar Paciente' valor.id %}">Eliminar </a> </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p></p>
+    <a class="btn btn-primary" href="{% url 'newuser' %}">Crear Paciente</a>
+</div>
+
+{% endblock %}
+

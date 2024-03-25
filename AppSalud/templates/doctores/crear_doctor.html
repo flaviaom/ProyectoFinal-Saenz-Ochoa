@@ -1,0 +1,33 @@
+ <!-- Herencia HTML -->
+{% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+ {% block mastheader %}
+ {% endblock %}
+ 
+  <!-- Silenciar Sección: Portafolio -->
+ {% block portafolio %}
+ {% endblock %} 
+
+ <!-- Sección: Título -->
+{% block titulo %}
+CREAR PERFIL DE DOCTOR
+{% endblock %}
+
+ <!-- Subsección: Subtítulo -->
+{% block subtitulo %}
+Ingresa tu información
+{% endblock %}
+
+ <!-- Subsección: Párrafo -->
+{% block parrafo %}
+
+<form action="/AppSalud/crear_doctor/" method="post"> {% csrf_token %}
+
+{{formu.as_p}}
+
+<input type="submit" value="Nuevo Doctor">
+
+</form>
+
+{% endblock %}

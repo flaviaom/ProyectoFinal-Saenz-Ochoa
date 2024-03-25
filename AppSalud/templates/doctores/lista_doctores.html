@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{% block titulo %}
+Acá vemos los Doctores en un formato de Clases
+{% endblock %}
+
+{% block parrafo %}
+
+{{object_list}}
+
+<ol>
+
+    {% for valor in cursos %}
+
+       <li>Nombre: {{valor.nombre}} ---- Especialidad: {{valor.especialidad}}</li> 
+
+    {% endfor %}
+
+</ol>
+
+{% endblock %}

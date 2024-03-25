@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{% block titulo %}
+
+Crea un nuevo Doctor
+
+{% endblock %}
+
+{% block parrafo %}
+
+Crea un nuevo doctor.
+
+<form action="" method="post"> {% csrf_token %}
+
+{{form.as_p}}
+
+<input type="submit" value="GUARDAR">
+
+</form>
+
+{% endblock %}

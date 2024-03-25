@@ -1,0 +1,55 @@
+<!-- Herencia HTML -->
+{% extends "padre.html" %}
+
+<!-- Agregar static -->
+{% load static %}
+
+<!-- Silenciar Sección: Header -->
+{% block mastheader %}
+{% endblock %}
+
+<!-- Silenciar Sección: Portafolio -->
+{% block portafolio %}
+{% endblock %}
+
+
+<!-- Sección: Título -->
+{% block titulo %}
+<div class="container">
+    <h1 class="text-center">SOBRE NOSOTROS</h1>
+</div>
+{% endblock %}
+
+<!-- Sección: Parrafo -->
+{% block parrafo %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Esta página fue creada por Luis Sáenz y Flavia Ochoa durante las clases de Python (Comisión 50210) de Coderhouse. Hemos creado una página para gestionar un centro de salud, ya que es un negocio familiar que nos interesa.</p>
+        </div>
+        <div class="col-md-6">
+            <!-- Insertar las imágenes con descripciones -->
+            <div class="row">
+                <div class="col-md-4">
+                    <figure>
+                        <img src="{% static 'AppSalud/assets/img/portfolio/LuisyFlavia.jpeg' %}" class="img-fluid" alt="Luis y Flavia">
+                        <figcaption>Luis y Flavia</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4">
+                    <figure>
+                        <img src="{% static 'AppSalud/assets/img/portfolio/Luis.jpg' %}" class="img-fluid" alt="Luis">
+                        <figcaption>Luis</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4">
+                    <figure>
+                        <img src="{% static 'AppSalud/assets/img/portfolio/Flavia.jpeg' %}" class="img-fluid" alt="Flavia">
+                        <figcaption>Flavia</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

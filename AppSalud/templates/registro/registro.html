@@ -1,0 +1,28 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+  <!-- Silenciar Sección: Portafolio -->
+  {% block portafolio %}
+  {% endblock %}
+  
+  <!-- Silenciar Sección: Header -->
+  {% block mastheader %}
+  {% endblock %}
+  
+   <!-- Sección: Título -->
+  {% block titulo %}
+  REGÍSTRATE AQUÍ
+  {% endblock %}
+  
+  <!-- Sección: Párrafo -->
+{% block parrafo %}
+
+<form action="" method="post"> {% csrf_token %}
+
+{{formu.as_p}}
+
+<button type="submit"> Registrarse </button>
+
+</form>
+
+{% endblock %}

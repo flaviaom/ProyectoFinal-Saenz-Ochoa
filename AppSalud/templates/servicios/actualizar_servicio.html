@@ -1,0 +1,35 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+ {% block mastheader %}
+ {% endblock %}
+ 
+ <!-- Silenciar Sección: Portafolio -->
+ {% block portafolio %}
+ {% endblock %}
+
+<!-- Sección: Título --> 
+{% block titulo %}
+Actualiza los datos
+{% endblock %}
+
+<!-- Subsección: Subtitulo --> 
+{% block subtitulo %}
+
+{% endblock %}
+
+<!-- Sección: Párrafo --> 
+{% block parrafo %}
+
+Aquí puedes editar la información de un servicio en el sistema. Al terminar no olvides darle GUARDAR.
+
+<form action="" method="post"> {% csrf_token %}
+
+{{form.as_p}}
+
+<input type="submit" value="GUARDAR">
+
+</form>
+
+{% endblock %}

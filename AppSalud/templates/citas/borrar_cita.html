@@ -1,0 +1,28 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+ {% block mastheader %}
+ {% endblock %}
+ 
+ <!-- Silenciar Sección: Portafolio -->
+ {% block portafolio %}
+ {% endblock %}
+
+<!-- Sección: Título --> 
+{% block titulo %}
+CITAS PROGRAMADAS
+{% endblock %}
+
+<!-- Sección: Párrafo --> 
+{% block parrafo %}
+Elimina una cita.
+<form action="" method="post"> {% csrf_token %}
+
+<p>Quiere eliminar la cita: {{object}} ? </p>
+
+<input type="submit" value="ELIMINAR">
+
+</form>
+
+{% endblock %}

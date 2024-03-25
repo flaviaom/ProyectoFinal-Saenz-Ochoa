@@ -1,0 +1,33 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+ {% block mastheader %}
+ {% endblock %}
+ 
+  <!-- Silenciar Sección: Portafolio -->
+ {% block portafolio %}
+ {% endblock %} 
+
+ <!-- Sección: Título -->
+{% block titulo %}
+AGENDA TU CITA
+{% endblock %}
+
+ <!-- Subsección: Subtítulo -->
+{% block subtitulo %}
+Programa aquí tu próxima atención con nosotros.
+{% endblock %}
+
+ <!-- Subsección: Párrafo -->
+{% block parrafo %}
+
+<form action="/AppSalud/agendar_cita/" method="post"> {% csrf_token %}
+
+{{formu.as_p}}
+
+<input type="submit" value="Agendar">
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+{% block mastheader %}
+{% endblock %}
+
+ <!-- Silenciar Sección: Portafolio -->
+{% block portafolio %}
+{% endblock %}
+
+ <!-- Sección: Título -->
+{% block titulo %}
+BUSCA TU CITA AQUÍ 
+{% endblock %}
+
+ <!-- Subsección: Subtítulo -->
+{% block subtitulo %}
+Encuentra tus citas programadas con tus datos.
+{% endblock %}
+
+ <!-- Subsección: Párrafo -->
+{% block parrafo %}
+Ingresa tu nombre.
+
+<form action="/AppSalud/buscar_cita/" method="get">
+    <p>
+        <input type="text" name="paciente">
+        <input type="submit" value="Buscar">
+    </p>
+</form>
+
+<h3>{{ mensaje }}</h3>
+
+{% for cita in resultados %}
+    <h4>Resultados:</h4>
+    <p>Cita del {{ cita.fecha }} para el paciente {{ cita.paciente.nombre }} con el doctor {{ cita.medico.nombre }}</p>
+{% endfor %}
+
+<div class="row justify-content-center mt-3">
+    <div class="col-md-4">
+        <a class="btn btn-primary btn-block" href="{% url 'newcita' %}">Crear Cita</a>
+    </div>
+</div>
+
+{% endblock %}
+

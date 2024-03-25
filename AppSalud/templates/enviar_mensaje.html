@@ -1,0 +1,38 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+{% block mastheader %}
+{% endblock %}
+
+ <!-- Silenciar Sección: Portafolio -->
+{% block portafolio %}
+{% endblock %}
+
+ <!-- Sección: Título -->
+{% block titulo %}
+MENSAJERÍA
+{% endblock %}
+
+ <!-- Subsección: Subtítulo -->
+{% block subtitulo %}
+Deja un mensaje para otro usuario.
+{% endblock %}
+
+ <!-- Subsección: Párrafo -->
+{% block parrafo %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Mensaje</title>
+</head>
+<body>
+    <h1>Enviar Mensaje</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+{% endblock %}

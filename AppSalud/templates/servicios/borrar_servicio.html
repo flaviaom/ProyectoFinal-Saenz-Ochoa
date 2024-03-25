@@ -1,0 +1,28 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+ {% block mastheader %}
+ {% endblock %}
+ 
+ <!-- Silenciar Sección: Portafolio -->
+ {% block portafolio %}
+ {% endblock %}
+
+<!-- Sección: Título --> 
+{% block titulo %}
+NUESTROS SERVICIOS
+{% endblock %}
+
+<!-- Sección: Párrafo --> 
+{% block parrafo %}
+Elimina un servicio.
+<form action="" method="post"> {% csrf_token %}
+
+<p>Quiere eliminar al servicio: {{object}} ? </p>
+
+<input type="submit" value="ELIMINAR">
+
+</form>
+
+{% endblock %}

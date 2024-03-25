@@ -1,0 +1,66 @@
+ <!-- Herencia HTML -->
+ {% extends "padre.html" %}
+
+ <!-- Silenciar Sección: Header -->
+{% block mastheader %}
+{% endblock %}
+
+ <!-- Silenciar Sección: Portafolio -->
+{% block portafolio %}
+{% endblock %}
+
+ <!-- Sección: Título -->
+{% block titulo %}
+CITAS PROGRAMADAS
+{% endblock %}
+
+ <!-- Subsección: Subtitulo -->
+ {% block subtitulo %}
+ Para modificar/ eliminar una cita inicia sesión.
+ {% endblock %}
+ 
+
+<!-- Sección: Párrafo -->
+{% block parrafo %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <table class="table table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Médico</th>
+                        <th scope="col">Motivo</th>
+                        <th scope="col">Servicio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for valor in total %}
+                    <tr>
+                        <td>{{ valor.paciente }}</td>
+                        <td>{{ valor.fecha }}</td>
+                        <td>{{ valor.medico }}</td>
+                        <td>{{ valor.motivo }}</td>
+                        <td>{{ valor.servicio }}</td>
+                        {% if user.is_authenticated %}
+                         <td> <a href="{% url 'editar cita' valor.id %}">Actualizar</a> </td>
+                         <td> <a href="{% url 'borrar cita' valor.id %}">Eliminar </a> </td>
+                         {% endif %}
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">No hay citas disponibles.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-4">
+            <a class="btn btn-primary btn-block" href="{% url 'newcita' %}">Crear Cita</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
