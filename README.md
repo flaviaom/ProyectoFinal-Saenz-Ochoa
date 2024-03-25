@@ -11,7 +11,7 @@ Esta es una web para una clínica, que sirve como un portal de gestión para el 
 
 ## Link a video
 En este video se muestran las principales funcionalidades de la página.
-Link: ``
+Link: `https://drive.google.com/drive/folders/1xina3OgzQEH9UG9qxOuzZ_VQnQP0ytpk?usp=sharing`
 
 ## Pasos para iniciar
 1. Primero hacer las migraciones de ser necesario: `python manage.py makemigrations`
